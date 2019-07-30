@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
+
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h2>Jquery event function</h2>
+    </header>
+    <div id="container">
+        <p class="par2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+        <p class="par2">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry 's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+            with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+        <button id="btn" class="btn1">Hide</button> <button class="btn2">Show</button><button class="btn3">Toggle</button>
+        <h1 id="coorde"></h1>
+        <div class="form-section">
+            <form action="" id="form">
+                <label for="">Name:</label>
+                <input type="text" id="name" name="name">
+                <br><label for="email">Email:</label>
+                <input type="email" name="email" id="email"><br>
+                <label for="">Gender</label>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <br><label for="">Password:</label>
+                <input type="password" name="" id="password"><br>
+                <input type="submit" id="submit" value="Submit">
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        // $('.btn1').on('click', function() {
+        //     $('.par1').hide();
+        // });
+        // $('.btn2').click('click', function() {
+        //         $('.par1').show();
+        //     })
+        // $('.btn3').on('click', function() {
+        //     $('.par2').toggle();
+        // });
+        // $('.btn3').on('mouseenter', function() {
+        //     $('.par2').toggle();
+        // // })
+        // $('.btn3').on('mousemove', function() {
+        //     $('.par2').toggle();
+        // // })
+        // $('.btn3').on('mousedown', function() {
+        //     $('.par2').toggle();
+        // });
+        // $('.btn3').on('mouseup', function() {
+        //     $('.par2').toggle();
+        // });
+        // $('#btn').on('click', function(e) {
+        //     // alert(e.currentTarget.innerHTML);
+        //     // alert(e.currentTarget.outerHTML);
+        //     // alert(e.currentTarget.id);
+        //     alert(e.currentTarget.className);
+
+        // });
+        // $(document).mousemove(function(e) {
+        //     $('#coorde').html('Coords: X:' + e.clientX + "Y:" + e.clientY)
+        // })
+        $('input').focus(function() {
+            $(this).css('background', 'red');
+        });
+        $('input').blur(function() {
+            $(this).css('background', 'white');
+        });
+        $('input').keyup(function(e) {
+            console.log(e.target.value);
+        });
+        $('select#gender').change(function(e) {
+            alert(e.target.value);
+        });
+        $('#form').submit(function(e) {
+            e.preventDefault();
+            console.log('submited successfully!!!!');
+        })
+    </script>
+
+</body>
+
+</html>

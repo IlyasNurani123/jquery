@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>Animation effect </header>
+    <div id="container">
+        <Button id="btnfadout" class="btn1">FadeOut</Button>
+        <Button id="btnfadin" class="btn2">Fadein</Button>
+        <Button id="btnfadtogal" class="btn3">FadeTogglet</Button>
+        <Button id="btnstop" class="btn3">Stop</Button>
+
+        <hr>
+        <div class="box">
+            <h2>hello word</h2>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+
+            // $('#btnfadout').click(function() {
+            //     $('.box').fadeOut(3000, function() {
+            //         $('#btnfadout').text('It is Done ');
+            //     });
+            // });
+            // $('.btn2').click(function() {
+            //     $('.box').fadeIn('4000');
+            // })
+            // $('.btn3').click(function() {
+            //     $('.box').fadeToggle();
+            // })
+            $('.btn1').click(function() {
+                $('.box').slideUp(3000, function() {
+                    $('.btn1').text('slid up');
+                });
+            });
+            $('.btn2').click(function() {
+                $('.box').slideDown(3000, function() {
+                    $('.btn2').text('slid Down');
+                });
+            });
+            $('.btn3').click(function() {
+                $('.box').slideToggle(3000, function() {
+                    $('.btn3').text('Toggle');
+                });
+                $('#btnstop').click(function() {
+                    $('.box').stop();
+                })
+            });
+        });
+    </script>
+</body>
+
+</html>

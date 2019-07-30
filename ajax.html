@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <script src="jquery.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h3>Ajax Request management</h3>
+    </header>
+    <div id="container">
+        <div id="result"></div>
+        <ul class="" id="jsvalue">
+
+        </ul>
+        <form id="postForm" action="https://jsonplaceholder.typicode.com/posts">
+            <input type="text" id="title" placeholder="enter title" name="title"><br>
+            <textarea name="body" id="body" placeholder="body" cols="30" rows="10"></textarea>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+</body>
+<script>
+    // $('#result').load('ajaxText.html', function(responseText, statusText, xhr) {
+
+    //     if (statusText == "success") {
+    //         alert('every thing is going good');
+    //     } else if (statusText == "error") {
+    //         alert("Error:" + xhr.statusText);
+    //     }
+
+    // });
+    // $.get('ajaxText.html', function(data) {
+    //     $('#result').html(data);
+    // })
+    // $.getJSON('test.json', function(data) {
+    //     $.each(data, function(i, user) {
+    //         $('#jsvalue').append('<li>' + user.id, user.title, +'</li>')
+    //     })
+    // });
+    // $.ajax({
+    //     method: 'GET',
+    //     url: 'https://jsonplaceholder.typicode.com/todos',
+    //     dataType: 'json'
+    // }).done(function(data) {
+    //     console.log(data),
+    //         $.map(data, function(todo, i) {
+    //             $('#result').append('<h4>' + todo.id + '</h4><p>' + todo.title + 'p');
+    //         })
+    // });
+    $('#postForm').submit(function(e) {
+        e.preventDefault();
+        var title = $('#title').val();
+        var body = $('#body').val();
+        var url = $(this).attr('action');
+        $.post(url, {
+            title: title,
+            body: body
+        }).done(function(data) {
+            console.log('data has been save');
+            console.log(data);
+        });
+    });
+</script>
+
+</html>
